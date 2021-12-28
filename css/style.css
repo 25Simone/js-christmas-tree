@@ -36,6 +36,6 @@ span{
     border-radius: 55px 55px 0 0;
     overflow: hidden;
 }
-span:last-child > div{
+span:last-child > .box:not(.centeredbox){
     border-radius: 0 0 15px 15px;
 }

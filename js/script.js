@@ -3,6 +3,11 @@ let rowContainer = document.querySelector('.container');
 
 // funzione per creare le row
 function createRow(treeHeight) {
+    let treeWidth = (treeHeight * 2) - 1;
+
+    // dichiaro la variabile middle per il centro dell'albero
+    let middle = ((treeWidth - 1) / 2);
+
     for (let i = 1; i <= treeHeight; i++) {
         const rowHtml = document.createElement('div');
         rowHtml.className = 'row';
@@ -21,7 +26,11 @@ function createRow(treeHeight) {
         for (let j = 0; j < 2 * i - 1; j++) {
             const coloredBox = document.createElement('div');
             const roundBox = document.createElement('div');
-            coloredBox.className = 'box green';
+            if(j == middle){
+            coloredBox.className = 'box green centeredbox';
+            } else {
+                coloredBox.className = 'box green';
+            }
             roundBox.className = 'round';
             treeDecorationContainer.append(coloredBox);
             coloredBox.append(roundBox);
@@ -44,7 +53,7 @@ function createTrunk (trunkHeight, treeHeight) {
         rowHtml.className = 'row';
         rowContainer.append(rowHtml);
 
-        // dichiaro la variabile middle per il posizionamento del tronco
+        // dichiaro la variabile middle per il centro dell'albero
         let middle = ((treeWidth - 1) / 2);
         for (let x = 0; x <= middle; x++) {
             if (x == middle){
