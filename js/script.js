@@ -25,15 +25,15 @@ function createRow(treeHeight) {
         // loop cicle per il pyramid pattern: colored boxes
         for (let j = 0; j < 2 * i - 1; j++) {
             const coloredBox = document.createElement('div');
-            const roundBox = document.createElement('div');
+            const lightsBox = document.createElement('div');
             if(j == middle){
             coloredBox.className = 'box green centeredbox';
             } else {
                 coloredBox.className = 'box green';
             }
-            roundBox.className = 'round';
+            lightsBox.className = 'lights';
             treeDecorationContainer.append(coloredBox);
-            coloredBox.append(roundBox);
+            coloredBox.append(lightsBox);
         }
 
         // creazione box vuoti right
@@ -75,7 +75,6 @@ function createTrunk (trunkHeight, treeHeight) {
     }
 }
 
-
-
+// annuncio le funzioni
 createRow(8);
 createTrunk(2, 8);

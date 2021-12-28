@@ -3,28 +3,33 @@
     padding: o;
     box-sizing: border-box;
 }
+body{
+    background-color: #333;
+}
 .row{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 .box {
-    border: 1px solid #000;
+    border: 1px solid #555;
     width: 50px;
     height: 80px;
     position: relative;
 }
-.green {
-    background: green;
+.box.green {
+    background: #227f35;
+    border: none;
 }
-.brown{
-    background: rgb(41, 12, 1);
+.box.brown{
+    border: none;
+    background: -webkit-linear-gradient(left, #370808, #150102); /* For Chrome and Safari */
 }
-.round{
-    width: 20px;
-    height: 20px;
+.lights{
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
-    background-color: orange;
+    background-color: red;
     position: absolute;
     top: 50%;
     left: 50%;
