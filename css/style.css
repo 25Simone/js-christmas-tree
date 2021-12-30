@@ -6,6 +6,16 @@
 body{
     background-color: #333;
 }
+.container{
+    margin-top: 10px;
+}
+.button-container{
+    text-align: center;
+}
+button{
+    margin: 15px 5px;
+    font-size: 30px;
+}
 .row{
     display: flex;
     flex-wrap: wrap;
@@ -29,7 +39,7 @@ body{
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: red;
+    /* background-color: red; */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -38,9 +48,27 @@ body{
 span{
     display: flex;
     flex-wrap: wrap;
-    border-radius: 55px 55px 0 0;
+    border-radius: 60px 60px 0 0;
     overflow: hidden;
 }
 span:last-child > .box:not(.centeredbox){
     border-radius: 0 0 15px 15px;
+}
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+.yellow{
+    background-color: yellow;
+}
+.purple{
+    background-color: purple;
+}
+.maroon{
+    background-color: maroon;
+}
+.dodgerblue{
+    background-color: dodgerblue;
 }

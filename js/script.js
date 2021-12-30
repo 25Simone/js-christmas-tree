@@ -1,6 +1,16 @@
 // dichiaro la variabile del container
 let rowContainer = document.querySelector('.container');
 
+// definisco le variabili dei button
+const button7 = document.getElementById('button-7');
+const button9 = document.getElementById('button-9');
+const buttonOnOff = document.getElementById('on-off-button');
+
+// definisco la lista di colori per le luci
+const colorList = ['red','blue', 'yellow', 'purple', 'maroon', 'dodgerblue'];
+// definisco un contatore per la lista di colori
+let currentIndex = 0;
+
 // funzione per creare le row
 function createRow(treeHeight) {
     let treeWidth = (treeHeight * 2) - 1;
@@ -75,6 +85,43 @@ function createTrunk (trunkHeight, treeHeight) {
     }
 }
 
-// annuncio le funzioni
-createRow(8);
-createTrunk(2, 8);
+// definisco gli eventi al click dei pulsanti
+button7.addEventListener('click', () => {
+    // reset
+    rowContainer.innerHTML = '';
+    // richiamo le funzioni per la creazione dell'albero e del tronco
+    createRow(7);
+    createTrunk(2, 7);
+})
+button9.addEventListener('click', () => {
+    // reset
+    rowContainer.innerHTML = '';
+    // richiamo le funzioni per la creazione dell'albero e del tronco
+    createRow(9);
+    createTrunk(2, 9);
+})
+
+let contatore = 0;
+// definisco una variabile flag per l'accensione delle luci
+let lightsOn;
+buttonOnOff.addEventListener('click', () => {
+    contatore++;
+    if(contatore % 2 != 0){
+        lightsOn = true;
+        let lightsList = document.getElementsByClassName('lights');
+        clock = setInterval(() => {
+            if(currentIndex > colorList.length - 1) {
+                currentIndex = 0; 
+            }
+            for(let i = 0; i <= lightsList.length - 1; i ++) {
+                lightsList[i].style.backgroundColor = colorList[currentIndex];
+                // lightsList[i].classList.add(colorList[currentIndex]);
+            }
+            currentIndex++; 
+        }, 500);
+    } else {
+        lightsOn = false;
+        clearInterval(clock);
+    }
+})
+
