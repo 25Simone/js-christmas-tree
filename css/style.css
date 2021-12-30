@@ -54,21 +54,7 @@ span{
 span:last-child > .box:not(.centeredbox){
     border-radius: 0 0 15px 15px;
 }
-.red{
-    background-color: red;
-}
-.blue{
-    background-color: blue;
-}
-.yellow{
-    background-color: yellow;
-}
-.purple{
-    background-color: purple;
-}
-.maroon{
-    background-color: maroon;
-}
-.dodgerblue{
-    background-color: dodgerblue;
+
+.negative-margin{
+    margin-top: -2px;
 }

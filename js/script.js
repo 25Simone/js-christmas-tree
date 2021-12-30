@@ -8,8 +8,13 @@ const buttonOnOff = document.getElementById('on-off-button');
 
 // definisco la lista di colori per le luci
 const colorList = ['red','blue', 'yellow', 'purple', 'maroon', 'dodgerblue'];
-// definisco un contatore per la lista di colori
+
+// contatori
 let currentIndex = 0;
+let contatore = 0;
+
+// definisco una variabile flag per l'accensione delle luci
+let lightsOn;
 
 // funzione per creare le row
 function createRow(treeHeight) {
@@ -100,22 +105,17 @@ button9.addEventListener('click', () => {
     createRow(9);
     createTrunk(2, 9);
 })
-
-let contatore = 0;
-// definisco una variabile flag per l'accensione delle luci
-let lightsOn;
 buttonOnOff.addEventListener('click', () => {
     contatore++;
+    let lightsList = document.getElementsByClassName('lights');
     if(contatore % 2 != 0){
         lightsOn = true;
-        let lightsList = document.getElementsByClassName('lights');
         clock = setInterval(() => {
             if(currentIndex > colorList.length - 1) {
                 currentIndex = 0; 
             }
             for(let i = 0; i <= lightsList.length - 1; i ++) {
                 lightsList[i].style.backgroundColor = colorList[currentIndex];
-                // lightsList[i].classList.add(colorList[currentIndex]);
             }
             currentIndex++; 
         }, 500);
@@ -125,3 +125,8 @@ buttonOnOff.addEventListener('click', () => {
     }
 })
 
+// for(let i = 0; i < lightsList.length - 1; i++){
+//     if(i % 2 === 0){
+//         lightsList[i].classList.toggle('negative-margin');
+//     }
+// }
