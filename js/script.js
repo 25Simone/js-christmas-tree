@@ -121,12 +121,9 @@ buttonOnOff.addEventListener('click', () => {
         }, 500);
     } else {
         lightsOn = false;
+        for(let i = 0; i <= lightsList.length - 1; i ++) {
+            lightsList[i].style.backgroundColor = 'transparent';
+        }
         clearInterval(clock);
     }
 })
-
-// for(let i = 0; i < lightsList.length - 1; i++){
-//     if(i % 2 === 0){
-//         lightsList[i].classList.toggle('negative-margin');
-//     }
-// }

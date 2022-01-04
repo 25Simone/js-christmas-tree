@@ -39,7 +39,6 @@ button{
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    /* background-color: red; */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -50,11 +49,8 @@ span{
     flex-wrap: wrap;
     border-radius: 60px 60px 0 0;
     overflow: hidden;
+    border-top: 3px solid #fff;
 }
 span:last-child > .box:not(.centeredbox){
     border-radius: 0 0 15px 15px;
-}
-
-.negative-margin{
-    margin-top: -2px;
 }
